@@ -1,0 +1,34 @@
+package crud;
+
+import javax.swing.JOptionPane;
+
+public class Update {
+	static JOptionPane entrada = new JOptionPane();
+	static JOptionPane saida = new JOptionPane();
+	
+	public static void Atualizar() {
+		String codigoBusca = "";
+		codigoBusca = entrada.showInputDialog("Digite o codigo que deseja atualizar:");
+		
+		for(int i=0;i<crud.Variaveis.QTDDISPO;i++) {
+			if(codigoBusca.equals(crud.Variaveis.codigo[i])) {
+				saida.showMessageDialog(saida, "Codigo encontrado");
+				saida.showMessageDialog(saida,i);
+				crud.Variaveis.indexcodigo = i;
+			}
+		 }
+				String verificadorNome;			
+				verificadorNome = entrada.showInputDialog("Digite o nome do cliente:");
+				if(verificadorNome.equals("")) {
+						saida.showMessageDialog(saida,"O campo está em branco!");
+				}
+				else {
+						crud.Variaveis.nome[crud.Variaveis.indexcodigo]=verificadorNome;
+				}
+						crud.Variaveis.email[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o email do cliente:");
+						crud.Variaveis.cidade[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o cidade do cliente:");
+						crud.Variaveis.uf[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o uf do cliente:");
+						saida.showMessageDialog(saida, "Codigo: "+codigoBusca+ " foi atualizado com sucesso");
+						crud.Variaveis.ncadastrados=+1;	
+		}
+}
