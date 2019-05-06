@@ -28,6 +28,7 @@ public class Update {
 						crud.Variaveis.email[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o email do cliente:");
 						crud.Variaveis.cidade[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o cidade do cliente:");
 						crud.Variaveis.uf[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o uf do cliente:");
-						saida.showMessageDialog(saida, "Codigo: "+codigoBusca+ " foi atualizado com sucesso");	
+						saida.showMessageDialog(saida, "Codigo: "+codigoBusca+ " foi atualizado com sucesso");
+						crud.Variaveis.ncadastrados=+1;	
 		}
 }

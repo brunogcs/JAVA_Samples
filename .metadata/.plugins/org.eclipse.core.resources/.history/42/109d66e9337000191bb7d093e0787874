@@ -2,13 +2,13 @@ package crud;
 
 import javax.swing.JOptionPane;
 
-public class Update {
+public class Delete {
 	static JOptionPane entrada = new JOptionPane();
 	static JOptionPane saida = new JOptionPane();
 	
-	public static void Atualizar() {
+	public static void Deletar() {
 		String codigoBusca = "";
-		codigoBusca = entrada.showInputDialog("Digite o codigo que deseja atualizar:");
+		codigoBusca = entrada.showInputDialog("Digite o codigo do cliente que deseja deletar:");
 		
 		for(int i=0;i<crud.Variaveis.QTDDISPO;i++) {
 			if(codigoBusca.equals(crud.Variaveis.codigo[i])) {
@@ -28,6 +28,7 @@ public class Update {
 						crud.Variaveis.email[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o email do cliente:");
 						crud.Variaveis.cidade[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o cidade do cliente:");
 						crud.Variaveis.uf[crud.Variaveis.indexcodigo]=entrada.showInputDialog("Digite o uf do cliente:");
-						saida.showMessageDialog(saida, "Codigo: "+codigoBusca+ " foi atualizado com sucesso");	
+						saida.showMessageDialog(saida, "Codigo: "+codigoBusca+ " foi atualizado com sucesso");
+						crud.Variaveis.ncadastrados=+1;	
 		}
 }
